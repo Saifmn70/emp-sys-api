@@ -19,5 +19,13 @@ output application/json
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="ff4cdba7-d1ce-40a5-89ce-e33e65554c22" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="b44f6070-2b54-4d10-90da-bd344b726a1a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+"happy new year 2022"]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
 	</flow>
 </mule>
