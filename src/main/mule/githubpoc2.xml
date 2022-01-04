@@ -5,26 +5,26 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="87f81212-dd9b-42e7-b3df-7be375252238" >
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="2a02ea08-1494-4914-9ff9-da82aa13a5d5" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<flow name="githubpocFlow" doc:id="ce86f957-4ab4-479a-b43c-e1ed41db0f84" >
-		<http:listener doc:name="Listener" doc:id="7420ae72-1aa5-41b4-b5ac-30a2c575b2d9" config-ref="HTTP_Listener_config" path="/test"/>
-		<ee:transform doc:name="Transform Message" doc:id="f51566d3-5e90-434b-a209-3461544f1235" >
+	<flow name="githubpoc2Flow" doc:id="3f46765c-0a9f-4050-8307-6ff762c247d9" >
+		<http:listener doc:name="Listener" doc:id="fd0d8079-1c80-4648-a6cb-2969d2b25854" config-ref="HTTP_Listener_config" path="/test"/>
+		<ee:transform doc:name="Transform Message" doc:id="2cd4dacf-45ab-40ef-bcc2-627144363cf8" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-"i am creating emp-sys-api module"]]></ee:set-payload>
+"be a mule developer"]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="ff4cdba7-d1ce-40a5-89ce-e33e65554c22" message="#[payload]"/>
-		<ee:transform doc:name="Transform Message" doc:id="b44f6070-2b54-4d10-90da-bd344b726a1a" >
+		<logger level="INFO" doc:name="Logger" doc:id="4ce41a12-8d25-4938-8fcd-869c14b5a478" />
+		<ee:transform doc:name="Transform Message" doc:id="7df061d9-bb3b-4c55-8d59-3e75ab885262" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-"happy new year 2022"]]></ee:set-payload>
+"happy to help anyone in need"]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 	</flow>
